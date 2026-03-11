@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>溝通氣場實踐工具 - Six Cards Communication Tool</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1 class="app-brand">溝通氣場實踐工具</h1>
+    <div class="header-badge">
+      <span class="pulse-dot"></span>
+      Six Cards Communication Tool
+    </div>
+  </header>
+
+  <main class="main-content">
+    <!-- Input Section -->
+    <div class="card">
+      <h4 class="card-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        思緒輸入
+      </h4>
+      <div class="sixcards-input-section">
+        <div class="sixcards-config-row">
+          <div class="input-group">
+            <label class="input-label">溝通對象</label>
+            <select class="select-input" id="sixcardsAudience">
+              <option value="chairman">董事長</option>
+              <option value="executives">高階主管</option>
+              <option value="client">客戶</option>
+              <option value="team">團隊成員</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label class="input-label">溝通目的</label>
+            <select class="select-input" id="sixcardsGoal">
+              <option value="resources">爭取資源</option>
+              <option value="report">績效報告</option>
+              <option value="proposal">提案說服</option>
+              <option value="alignment">共識對齊</option>
+            </select>
+          </div>
+        </div>
+        <textarea class="sixcards-textarea" id="sixcardsInput" rows="6" placeholder="貼上逐字稿、提案草稿或任何想表達的內容（建議 200 字以上）..."></textarea>
+        <div class="sixcards-btn-row">
+          <button class="btn btn-secondary" id="sixcardsDemo">載入範例</button>
+          <button class="btn btn-primary" id="sixcardsGenerate" style="flex:1">生成六張紙片</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Version Selector -->
+    <div class="sixcards-version-bar" id="sixcardsVersionBar" style="display:none"></div>
+
+    <!-- 2x3 Card Board -->
+    <div class="sixcards-board" id="sixcardsBoard" style="display:none"></div>
+
+    <!-- Actions -->
+    <div class="sixcards-actions" id="sixcardsActions" style="display:none">
+      <button class="btn btn-practice" id="sixcardsPractice">開始練習模式</button>
+      <button class="btn btn-pdf" id="sixcardsPdf">下載 PDF（含裁切線）</button>
+    </div>
+
+    <!-- Practice Status -->
+    <div class="sixcards-practice-status" id="sixcardsPracticeStatus" style="display:none"></div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/sixcards.js"></script>
+  <script src="js/sixcards-pdf.js"></script>
+</body>
+</html>
