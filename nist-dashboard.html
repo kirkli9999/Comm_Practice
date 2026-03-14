@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>NIST AI 監控儀表板 - AI Monitoring Dashboard</title>
+  <link rel="stylesheet" href="css/nist-dashboard.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="dash-header">
+    <div class="dash-header-left">
+      <a href="ai-finance.html" class="back-link">&larr; AI 財務創新</a>
+      <h1 class="dash-title">NIST AI 監控儀表板</h1>
+    </div>
+    <div class="dash-header-right">
+      <span class="sys-badge">
+        <span class="live-dot"></span>
+        Mock Dashboard
+      </span>
+      <button class="refresh-btn" id="refreshBtn">Refresh Data</button>
+    </div>
+  </header>
+
+  <!-- System Info Bar -->
+  <div class="sys-info-bar" id="sysInfoBar"></div>
+
+  <main class="dash-main">
+    <!-- Overall Score + Alerts -->
+    <section class="overall-section">
+      <div class="overall-score-card">
+        <div class="score-ring" id="overallRing"></div>
+      </div>
+      <div class="alert-summary-card">
+        <div class="alert-summary-title">Alert Summary (30 Days)</div>
+        <div class="alert-summary-counts">
+          <div class="alert-count-box critical">
+            <div class="alert-count-num" id="alertCriticalNum">0</div>
+            <div class="alert-count-label">Critical</div>
+          </div>
+          <div class="alert-count-box warning">
+            <div class="alert-count-num" id="alertWarningNum">0</div>
+            <div class="alert-count-label">Warning</div>
+          </div>
+          <div class="alert-count-box info">
+            <div class="alert-count-num" id="alertInfoNum">0</div>
+            <div class="alert-count-label">Info</div>
+          </div>
+        </div>
+        <div class="alert-recent-list" id="alertRecentList"></div>
+      </div>
+    </section>
+
+    <!-- 6 Dimension Grid -->
+    <section class="dim-grid" id="dimGrid"></section>
+
+    <!-- Detail Panel (hidden by default) -->
+    <section class="detail-panel" id="detailPanel" style="display:none">
+      <div class="detail-header">
+        <div class="detail-header-left">
+          <div class="detail-dim-icon" id="detailIcon"></div>
+          <div>
+            <div class="detail-dim-title" id="detailTitle"></div>
+            <div class="detail-dim-subtitle" id="detailSubtitle"></div>
+          </div>
+        </div>
+        <button class="detail-close-btn" id="detailCloseBtn">Close</button>
+      </div>
+      <div class="detail-body">
+        <div class="detail-metrics-grid" id="detailMetrics"></div>
+        <div class="detail-timeline-section">
+          <div class="detail-timeline-col">
+            <div class="detail-col-title alerts-title">Alerts</div>
+            <div id="detailAlerts"></div>
+          </div>
+          <div class="detail-timeline-col">
+            <div class="detail-col-title events-title">Events</div>
+            <div id="detailEvents"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/nist-dashboard-data.js"></script>
+  <script src="js/nist-dashboard.js"></script>
+</body>
+</html>
