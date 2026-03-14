@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>AI 財務創新案例方向 - AI Finance Innovation Explorer</title>
+  <link rel="stylesheet" href="css/ai-finance.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-left">
+      <a href="index.html" class="back-link">← 返回主頁</a>
+      <h1 class="app-brand">AI 財務創新案例方向</h1>
+    </div>
+    <div class="header-badge">
+      <span class="pulse-dot"></span>
+      AI Finance Innovation Explorer
+    </div>
+  </header>
+
+  <main class="main-content">
+    <!-- Overview Section -->
+    <section class="overview-section">
+      <div class="card intro-card">
+        <h2 class="section-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+          研究基礎與方向概述
+        </h2>
+        <p class="intro-text">
+          本工具整合三份國際權威文獻的關鍵洞察，為您呈現 AI 在財務與金融領域的創新案例方向。
+          從<strong>已部署 AI 系統監控</strong>（NIST AI 800-4）、<strong>數位勞動力決策框架</strong>（Deloitte）、
+          到<strong>LLM 總體金融分析效能</strong>（IMF），每個案例方向均有理論依據與實務對應。
+        </p>
+        <div class="source-tags">
+          <span class="source-tag nist">NIST AI 800-4</span>
+          <span class="source-tag deloitte">Deloitte 2026</span>
+          <span class="source-tag imf">IMF Working Paper</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Domain Selector -->
+    <section class="domain-selector">
+      <div class="domain-tabs" id="domainTabs">
+        <button class="domain-tab active" data-domain="banking">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M3 10h18"/><path d="M5 6l7-3 7 3"/><path d="M4 10v11"/><path d="M20 10v11"/><path d="M8 14v3"/><path d="M12 14v3"/><path d="M16 14v3"/></svg>
+          金融業應用
+        </button>
+        <button class="domain-tab" data-domain="corporate">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          企業財務應用
+        </button>
+        <button class="domain-tab" data-domain="governance">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          AI 治理與監控
+        </button>
+      </div>
+    </section>
+
+    <!-- Case Cards Grid -->
+    <section class="cases-grid" id="casesGrid"></section>
+
+    <!-- Detail Panel (shown when a case is clicked) -->
+    <section class="detail-panel" id="detailPanel" style="display:none">
+      <div class="detail-card">
+        <div class="detail-header">
+          <button class="detail-close" id="detailClose">✕ 關閉</button>
+          <h3 class="detail-title" id="detailTitle"></h3>
+          <div class="detail-sources" id="detailSources"></div>
+        </div>
+        <div class="detail-body" id="detailBody"></div>
+      </div>
+    </section>
+
+    <!-- C-Suite Mapping -->
+    <section class="csuite-section">
+      <div class="card">
+        <h2 class="section-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          高階主管角色對應（Deloitte 框架）
+        </h2>
+        <p class="csuite-intro">根據 Deloitte 報告，AI 創新案例的推動需要各層級主管明確分工：</p>
+        <div class="csuite-grid" id="csuiteGrid"></div>
+      </div>
+    </section>
+
+    <!-- Monitoring Framework -->
+    <section class="monitoring-section">
+      <div class="card">
+        <h2 class="section-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          NIST 六大監控框架對應
+        </h2>
+        <p class="monitoring-intro">任何 AI 財務創新案例上線後，均需依循 NIST AI 800-4 的六大監控維度進行持續追蹤：</p>
+        <div class="monitoring-grid" id="monitoringGrid"></div>
+      </div>
+    </section>
+
+    <!-- Key Challenges -->
+    <section class="challenges-section">
+      <div class="card">
+        <h2 class="section-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          跨案例共同挑戰與因應策略
+        </h2>
+        <div class="challenges-list" id="challengesList"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/ai-finance-data.js"></script>
+  <script src="js/ai-finance.js"></script>
+</body>
+</html>
