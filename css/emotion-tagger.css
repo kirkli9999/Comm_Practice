@@ -1,0 +1,294 @@
+/* === Emotion Tagger Platform Styles === */
+
+/* ─── Layout ─────────────────────────────────────────────────────────────── */
+
+.et-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+@media (max-width: 700px) {
+  .et-layout { grid-template-columns: 1fr; }
+}
+
+/* ─── Input Panel ────────────────────────────────────────────────────────── */
+
+.et-input-panel {}
+
+.et-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.625rem;
+  flex-wrap: wrap;
+}
+
+.et-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.et-char-count {
+  font-size: 0.7rem;
+  color: var(--slate-400);
+}
+
+.et-textarea {
+  width: 100%;
+  min-height: 280px;
+  resize: vertical;
+  border: 1px solid var(--slate-200);
+  border-radius: 0.375rem;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  font-family: inherit;
+  color: var(--slate-800);
+  transition: border-color 0.15s;
+  display: block;
+}
+.et-textarea:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.1);
+}
+.et-textarea::placeholder { color: var(--slate-400); }
+
+.et-btn-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+/* ─── Buttons ────────────────────────────────────────────────────────────── */
+
+.et-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.et-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.et-btn-primary {
+  background: #6366f1;
+  color: white;
+  flex: 1;
+}
+.et-btn-primary:hover:not(:disabled) { background: #4f46e5; }
+
+.et-btn-secondary {
+  background: var(--slate-100);
+  color: var(--slate-700);
+  border: 1px solid var(--slate-200);
+}
+.et-btn-secondary:hover:not(:disabled) { background: var(--slate-200); }
+
+.et-btn-ghost {
+  background: transparent;
+  color: var(--slate-600);
+  border: 1px solid var(--slate-200);
+  padding: 0.35rem 0.75rem;
+  font-size: 0.72rem;
+}
+.et-btn-ghost:hover { background: var(--slate-50); color: var(--slate-800); }
+
+/* ─── Error Banner ───────────────────────────────────────────────────────── */
+
+.et-error {
+  display: none;
+  background: #fef2f2;
+  color: #ef4444;
+  border: 1px solid #fecaca;
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+/* ─── Results Panel ──────────────────────────────────────────────────────── */
+
+.et-results-panel {}
+
+.et-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  text-align: center;
+  color: var(--slate-400);
+  gap: 0.5rem;
+}
+.et-placeholder-icon { font-size: 2.5rem; opacity: 0.4; }
+.et-placeholder-text { font-size: 0.8rem; }
+
+/* ─── Summary Bar ────────────────────────────────────────────────────────── */
+
+.et-summary {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--slate-50);
+  border-radius: 0.375rem;
+  border: 1px solid var(--slate-100);
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.et-summary-dominant {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.et-dominant-icon { font-size: 1.75rem; }
+
+.et-dominant-info {}
+.et-dominant-caption {
+  font-size: 0.65rem;
+  color: var(--slate-400);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.et-dominant-label {
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.et-summary-divider {
+  width: 1px;
+  height: 2rem;
+  background: var(--slate-200);
+}
+
+.et-sentence-count {
+  font-size: 0.75rem;
+  color: var(--slate-600);
+}
+.et-sentence-count strong { color: var(--slate-800); }
+
+/* ─── Distribution Chart ─────────────────────────────────────────────────── */
+
+.et-section-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--slate-600);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.625rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.et-dist-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.75rem;
+}
+.et-dist-label {
+  width: 3.5rem;
+  flex-shrink: 0;
+  color: var(--slate-700);
+  font-weight: 600;
+}
+.et-dist-bar-wrap {
+  flex: 1;
+  height: 8px;
+  background: var(--slate-100);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.et-dist-bar {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.5s ease;
+  min-width: 4px;
+}
+.et-dist-pct {
+  width: 5rem;
+  text-align: right;
+  flex-shrink: 0;
+  color: var(--slate-600);
+}
+
+/* ─── Sentence List ──────────────────────────────────────────────────────── */
+
+.et-sentence-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 420px;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+.et-sentence-list::-webkit-scrollbar { width: 4px; }
+.et-sentence-list::-webkit-scrollbar-track { background: var(--slate-100); border-radius: 2px; }
+.et-sentence-list::-webkit-scrollbar-thumb { background: var(--slate-300); border-radius: 2px; }
+
+.et-sentence-row {
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  border-left-width: 3px;
+  border-left-style: solid;
+}
+
+.et-sentence-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.3rem;
+  flex-wrap: wrap;
+}
+
+.et-sentence-num {
+  font-size: 0.65rem;
+  color: var(--slate-400);
+  font-weight: 700;
+  min-width: 1.2rem;
+}
+
+.et-sentence-text {
+  font-size: 0.82rem;
+  color: var(--slate-700);
+  line-height: 1.6;
+}
+
+/* ─── Pill Tags ──────────────────────────────────────────────────────────── */
+
+.et-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* ─── Emotion Legend ─────────────────────────────────────────────────────── */
+
+.et-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+/* ─── Sections spacing ───────────────────────────────────────────────────── */
+.et-section { margin-bottom: 1.25rem; }
+.et-section:last-child { margin-bottom: 0; }
